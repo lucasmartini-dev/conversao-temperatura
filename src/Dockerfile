@@ -1,5 +1,6 @@
 FROM node:20.9.0-alpine3.18
 WORKDIR /app
-COPY . .
+COPY package.json package-lock.json ./
 RUN npm install
+COPY . .
 ENTRYPOINT ["node", "server.js"]
